@@ -22,6 +22,7 @@ classDiagram
 
         + Date()
         + void init(string date)
+        + void printDate()
     }
 
     class Student {
