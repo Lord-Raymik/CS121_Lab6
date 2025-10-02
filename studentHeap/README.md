@@ -12,7 +12,6 @@ classDiagram
         + Address()
         + void init(string street, string city, string state, string zip)
         + void printAddress()
-        + int getZip()
     }
 
     class Date {
