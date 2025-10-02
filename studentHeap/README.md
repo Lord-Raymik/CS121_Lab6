@@ -31,6 +31,10 @@ classDiagram
         - Date birthday
         - Date expectedGradDate
         - int creditHoursComplete
+
+        + Student()
+        + void init(string studentString)
+        + void printStudent() 
     }
 
     Student o-- Address
