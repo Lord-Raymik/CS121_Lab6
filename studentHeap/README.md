@@ -7,12 +7,11 @@ classDiagram
         - string street
         - string city
         - string state
-        - int zip
+        - string zip
 
-        + Address(string street, string city, string state, int zip)
-        + string getStreet()
-        + string getCity()
-        + string getState()
+        + Address()
+        + void init(string street, string city, string state, string zip)
+        + void printAddress()
         + int getZip()
     }
 
@@ -21,10 +20,8 @@ classDiagram
         - int day
         - int year
 
-        + Date(int month, int day, int year)
-        + int getMonth()
-        + int getDay()
-        + int getYear()
+        + Date()
+        + void init(string date)
     }
 
     class Student {
