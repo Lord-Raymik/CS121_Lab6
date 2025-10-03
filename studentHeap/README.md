@@ -27,14 +27,16 @@ classDiagram
     class Student {
         - string firstName
         - string lastName
-        - Address address
-        - Date birthday
-        - Date expectedGradDate
+        - Address* address
+        - Date* birthday
+        - Date* expectedGradDate
         - int creditHoursComplete
 
         + Student()
+        + ~Student()
         + void init(string studentString)
-        + void printStudent() 
+        + void printStudent()
+        + string getLastFirst() 
     }
 
     Student o-- Address

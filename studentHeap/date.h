@@ -1,6 +1,5 @@
-#include <iostream>
-#include <sstream>
-#include <fstream>
+#ifndef HAS_DATE_H
+#define HAS_DATE_H
 
 class Date {
 	private:
@@ -12,3 +11,5 @@ class Date {
 		void init(std::string date);
 		void printDate();
 };
+
+#endif //HAS_DATE_H
