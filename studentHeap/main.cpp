@@ -6,18 +6,16 @@
 #include "address.h"
 #include "student.h"
 
-std::vector<Student*> readStudentFile();
+std::vector<Student*> loadStudents();
+void printStudents(std::vector<Student*> students);
 
 int main() {
-	std::vector<Student*> students = readStudentFile();
-	for (Student* currentStudent : students) {
-		currentStudent->printStudent();
-		std::cout << std::endl;
-	}
+	std::vector<Student*> students = loadStudents();
+	printStudents(students);
 	return 0;
 } // end main
 
-std::vector<Student*> readStudentFile () {
+std::vector<Student*> loadStudents() {
 	std::vector<Student*> studentList;
 	std::ifstream inFile;
 	std::string currentLine;
@@ -31,3 +29,11 @@ std::vector<Student*> readStudentFile () {
 	
 	return studentList;
 } // end readStudentFile
+
+void printStudents(std::vector<Student*> students) {
+	for(Student* currentStudent : students) {
+		std::cout << std::endl;
+		currentStudent->printStudent();
+		std::cout << "_____________________________________________" << std::endl;
+	} // end for loop
+} // end printStudents
