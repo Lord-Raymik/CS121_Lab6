@@ -43,3 +43,7 @@ classDiagram
     Student o-- Date
 
 ```
+
+# Documentation of Algorithm
+
+
