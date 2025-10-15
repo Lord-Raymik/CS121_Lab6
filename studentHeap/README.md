@@ -73,3 +73,11 @@ A vector of Student pointers (likely the vector created from students.csv), whic
 Loop through each Student in the students vector, doing the following:
     Call printStudent() on the current Student in the loop
     Print a horizontal line to the console to clearly seperate students on viewing
+
+## printStudentNames Function
+This function is similar to printStudents(), but instead of printing everything about the student, it only prints their names. Specifically, ir prints their last name, then their first.
+### Parameters for printStudentNames()
+A vector of Student pointers (likely the vector created from students.csv), which will be referred to as students
+### Algorithm for printStudentNames()
+Loop through each Student in the students vector, doing the following:
+    Print the result of the Student's printLastFirst() function to the console
