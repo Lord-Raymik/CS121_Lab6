@@ -2,6 +2,7 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
+#include <algorithm>
 #include "date.h"
 #include "address.h"
 #include "student.h"
@@ -12,6 +13,9 @@ void printStudentNames(std::vector<Student*> students);
 void findStudent(std::vector<Student*> students);
 void deleteStudents(std::vector<Student*>& students);
 void menu(std::vector<Student*>& students);
+void sortStudents(std::vector<Student*>& students);
+//comparator functions
+bool compareStudentNames(Student*& a, Student*& b);
 
 int main() {
 	std::vector<Student*> students = loadStudents();
@@ -82,7 +86,7 @@ void menu(std::vector<Student*>& students) {
 	std::string sInput;
 	bool keepGoing = true;
 	while (keepGoing) {
-		std::cout << "0) Quit" << std::endl << "1) Print all student names" << std::endl << "2) Print all student data" << std::endl << "3) Find a student" << std::endl << std::endl << "Please choose 0-3: " << std::endl;
+		std::cout << "0) Quit" << std::endl << "1) Print all student names" << std::endl << "2) Print all student data" << std::endl << "3) Find a student" << std::endl << "4) Sort students" << std::endl << std::endl << "Please choose 0-3: ";
 		getline(std::cin, sInput);
 		if (sInput.find("0") != std::string::npos) {
 			keepGoing = false;
@@ -92,9 +96,39 @@ void menu(std::vector<Student*>& students) {
 			printStudents(students);
 		} else if (sInput.find("3") != std::string::npos) {
 			findStudent(students);
+		} else if (sInput.find("4") != std::string::npos) {
+			sortStudents(students);
 		} else {
 			std::cout << "Invalid input..." << std::endl;
 		} // end if
 	} // end while loop
 	deleteStudents(students);
 } // end menu
+
+void sortStudents(std::vector<Student*>& students) {
+	std::string sInput;
+	bool keepGoing = true;
+	while (keepGoing) {
+		std::cout << "What metric will the students be sorted by..." << std::endl << "0) Name" << std::endl << "1) Birthday" << std::endl << "2) Graduation Date" << std::endl << "3) Credit Hours" << std::endl << std::endl << "Please choose 0-3: ";
+		getline(std::cin, sInput);
+		if (sInput.find("0") != std::string::npos) {
+			keepGoing = false;
+			sort(students.begin(), students.end(), compareStudentNames);
+		} else if (sInput.find("1") != std::string::npos) {
+			keepGoing = false;
+		} else if (sInput.find("2") != std::string::npos) {
+			keepGoing = false;
+		} else if (sInput.find("3") != std::string::npos) {
+			keepGoing = false;
+		} else {
+			std::cout << "Invalid input..." << std::endl;
+		} // end if
+	} // end while loop
+	std::cout << "Students have been sorted...";
+} // end sortStudents
+
+//These function are used in sorting to compare the students by different metrics
+
+bool compareStudentNames(Student*& a, Student*& b) {
+	return (a->getLastFirst() < b->getLastFirst());
+} // end compareStudentNames

@@ -15,6 +15,9 @@ class Student {
 	public:
 		Student();
 		~Student();
+		Date* getBirthday();
+		Date* getExpectedGradDate();
+		int getCreditHours();
 		void init(std::string studentString);
 		void printStudent();
 		std::string getLastFirst();

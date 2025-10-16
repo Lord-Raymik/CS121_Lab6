@@ -22,6 +22,18 @@ Student::~Student() {
 	delete Student::expectedGradDate;
 } //end deconstructor
 
+Date* Student::getBirthday() {
+	return Student::birthday;
+} // end getBirthday
+
+Date* Student::getExpectedGradDate() {
+	return Student::expectedGradDate;
+} // end getExpectedGradDate
+
+int Student::getCreditHours() {
+	return Student::creditHoursComplete;
+} // end getCreditHours
+
 void Student::init(std::string studentString) {
 	std::stringstream converter;
 	std::string sStreet;

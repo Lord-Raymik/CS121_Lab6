@@ -20,6 +20,7 @@ classDiagram
         - int year
 
         + Date()
+        + bool compare(Date* targetDate)
         + int getYear()
         + int getMonth()
         + int getDay()
@@ -38,7 +39,7 @@ classDiagram
         + Student()
         + ~Student()
         + Date* getBirthday()
-        + Date* getexpectedGradDate()
+        + Date* getExpectedGradDate()
         + int getCreditHours()
         + void init(string studentString)
         + void printStudent()
