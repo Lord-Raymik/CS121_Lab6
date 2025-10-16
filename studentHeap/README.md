@@ -94,5 +94,5 @@ Ask the user what last name to look for
 Loop through every student in the students vector, doing the following:  
     Set converter's string to the returned string from getLastFirst()  
     Use getline to grab the student's last name from converter  
-    Compare the last name to the value of searchName, if they are the same then add the pointer to the current student to foundStudents  
+    Compare the last name to the value of searchName, if searchName is found within the last name then add the pointer to the current student to foundStudents  
 Call printStudents(), passing foundStudents as it's vector parameter  
