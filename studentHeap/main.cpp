@@ -10,10 +10,12 @@ std::vector<Student*> loadStudents();
 void printStudents(std::vector<Student*> students);
 void printStudentNames(std::vector<Student*> students);
 void findStudent(std::vector<Student*> students);
+void deleteStudents(std::vector<Student*>& students);
 
 int main() {
 	std::vector<Student*> students = loadStudents();
 	findStudent(students);
+	deleteStudents(students);
 	return 0;
 } // end main
 
@@ -33,6 +35,7 @@ std::vector<Student*> loadStudents() {
 } // end readStudentFile
 
 void printStudents(std::vector<Student*> students) {
+	std::cout << "_____________________________________________" << std::endl;
 	for (Student* currentStudent : students) {
 		std::cout << std::endl;
 		currentStudent->printStudent();
@@ -68,3 +71,9 @@ void findStudent(std::vector<Student*> students) {
 		printStudents(foundStudents);
 	} // end if
 } // end findStudent
+
+void deleteStudents(std::vector<Student*>& students) {
+	for (Student* currentStudent : students) {
+		delete currentStudent;
+	} // end for each loop
+} // end deleteStudents

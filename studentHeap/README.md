@@ -95,4 +95,12 @@ Loop through every student in the students vector, doing the following:
     Set converter's string to the returned string from getLastFirst()  
     Use getline to grab the student's last name from converter  
     Compare the last name to the value of searchName, if searchName is found within the last name then add the pointer to the current student to foundStudents  
-Call printStudents(), passing foundStudents as it's vector parameter  
+Call printStudents(), passing foundStudents as it's vector parameter 
+
+## deleteStudents Function
+This function deallocates the heap memory used for the students vector once the program is finished.  
+### Parameters for deleteStudents()
+A reference to the students vector (needs to be a reference so it can actually change the values in students)  
+### Algorithm for deleteStudents()
+Loop through each Student pointer in the students vector, doing the following:  
+    Delete the current student via it's pointer
