@@ -110,7 +110,7 @@ This function is the menu that the user interacts with.
 ### Parameters for menu()
 A vector of Student pointers (likely the vector created from students.csv), which will be referred to as students.  
 ### Algorithm for menu()
-Begin a loop for the menu, which will stop when the user decides to quit
+Begin a loop for the menu, which will stop when the user decides to quit  
 Print out the different valid inputs the user can do (these are in the form of numbers corresponding to commands, but for this documentation i will be using the actual names for the commands rather than the numbers)  
 Depending on what the user inputs, do one of the following:  
     Quit:  

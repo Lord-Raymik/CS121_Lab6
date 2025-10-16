@@ -11,11 +11,11 @@ void printStudents(std::vector<Student*> students);
 void printStudentNames(std::vector<Student*> students);
 void findStudent(std::vector<Student*> students);
 void deleteStudents(std::vector<Student*>& students);
+void menu(std::vector<Student*>& students);
 
 int main() {
 	std::vector<Student*> students = loadStudents();
-	findStudent(students);
-	deleteStudents(students);
+	menu(students);
 	return 0;
 } // end main
 
@@ -56,7 +56,7 @@ void findStudent(std::vector<Student*> students) {
 	std::stringstream converter;
 	std::string searchName;
 	std::cout << "Last name of student: ";
-	std::cin >> searchName;
+	getline(std::cin, searchName);
 	for (Student* currentStudent : students) {
 		converter.str(currentStudent->getLastFirst());
 		std::string lastName;
@@ -77,3 +77,24 @@ void deleteStudents(std::vector<Student*>& students) {
 		delete currentStudent;
 	} // end for each loop
 } // end deleteStudents
+
+void menu(std::vector<Student*>& students) {
+	std::string sInput;
+	bool keepGoing = true;
+	while (keepGoing) {
+		std::cout << "0) Quit" << std::endl << "1) Print all student names" << std::endl << "2) Print all student data" << std::endl << "3) Find a student" << std::endl << std::endl << "Please choose 0-3: " << std::endl;
+		getline(std::cin, sInput);
+		if (sInput.find("0") != std::string::npos) {
+			keepGoing = false;
+		} else if (sInput.find("1") != std::string::npos) {
+			printStudentNames(students);
+		} else if (sInput.find("2") != std::string::npos) {
+			printStudents(students);
+		} else if (sInput.find("3") != std::string::npos) {
+			findStudent(students);
+		} else {
+			std::cout << "Invalid input..." << std::endl;
+		} // end if
+	} // end while loop
+	deleteStudents(students);
+} // end menu
