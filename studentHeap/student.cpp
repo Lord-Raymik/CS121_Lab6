@@ -62,7 +62,7 @@ void Student::printStudent() {
 	Student::birthday->printDate();
 	std::cout << "Grad: ";
 	Student::expectedGradDate->printDate();
-	std::cout << Student::creditHoursComplete << std::endl;
+	std::cout << "Credits: " << Student::creditHoursComplete << std::endl;
 } //end printStudent
 
 std::string Student::getLastFirst() {

@@ -12,7 +12,7 @@ void printStudentNames(std::vector<Student*> students);
 
 int main() {
 	std::vector<Student*> students = loadStudents();
-	printStudents(students);
+	printStudentNames(students);
 	return 0;
 } // end main
 

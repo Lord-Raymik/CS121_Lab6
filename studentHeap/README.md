@@ -80,4 +80,19 @@ This function is similar to printStudents(), but instead of printing everything 
 A vector of Student pointers (likely the vector created from students.csv), which will be referred to as students
 ### Algorithm for printStudentNames()
 Loop through each Student in the students vector, doing the following:
-    Print the result of the Student's printLastFirst() function to the console
+    Print the result of the Student's getLastFirst() function to the console
+
+## findStudent Function
+This function asks the user for the last name of a student they are looking for (it could even be a single letter, it will still work), it then returns the data of every student who's last name contains the given string.
+### Parameters for findStudent()
+A vector of Student pointers (likely the vector created from students.csv), which will be referred to as students
+### Algorithm for findStudent()
+Create a vector of student pointers called foundStudents (this will be the list of students printed to the console)  
+Create a stringstream called converter  
+Create a string called seachName which will be the name to look for  
+Ask the user what last name to look for
+Loop through every student in the students vector, doing the following:
+    Set converter's string to the returned string from getLastFirst()
+    Use getline to grab the student's last name from converter
+    Compare the last name to the value of searchName, if they are the same then add the pointer to the current student to foundStudents
+Call printStudents(), passing foundStudents as it's vector parameter
