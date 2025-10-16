@@ -47,3 +47,7 @@ void printStudentNames(std::vector<Student*> students) {
 	} // end for each loop
 	std::cout << std::endl;
 } // end printStudentNames
+
+void findStudent(std::vector<Student*> students) {
+
+} // end findStudent
