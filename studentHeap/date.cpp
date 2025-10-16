@@ -10,6 +10,38 @@ Date::Date() {
 	Date::year = 0;
 }
 
+bool Date::compare(Date* targetDate) {
+	if (this->year < targetDate->getYear()) {
+		return true;
+	} else if (this->year == targetDate->getYear()) {
+		if (this->month < targetDate->getMonth()) {
+			return true;
+		} else if (this->month == targetDate->getMonth()) {
+			if (this->day < targetDate->getDay()) {
+				return true;
+			} else {
+				return false;
+			} // end if
+		} else {
+			return false;
+		} // end if
+	} else {
+		return false;
+	} // end if
+}
+
+int Date::getYear() {
+	return Date::year;
+}
+
+int Date::getMonth() {
+	return Date::month;
+}
+
+int Date::getDay() {
+	return Date::day;
+}
+
 void Date::init(std::string date) {
 	std::stringstream converter;
 	std::stringstream ss;

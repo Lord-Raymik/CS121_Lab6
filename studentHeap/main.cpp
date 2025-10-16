@@ -16,6 +16,9 @@ void menu(std::vector<Student*>& students);
 void sortStudents(std::vector<Student*>& students);
 //comparator functions
 bool compareStudentNames(Student*& a, Student*& b);
+bool compareStudentBirthdays(Student*& a, Student*& b);
+bool compareStudentGradDates(Student*& a, Student*& b);
+bool compareStudentCreditHours(Student*& a, Student*& b);
 
 int main() {
 	std::vector<Student*> students = loadStudents();
@@ -116,10 +119,13 @@ void sortStudents(std::vector<Student*>& students) {
 			sort(students.begin(), students.end(), compareStudentNames);
 		} else if (sInput.find("1") != std::string::npos) {
 			keepGoing = false;
+			sort(students.begin(), students.end(), compareStudentBirthdays);
 		} else if (sInput.find("2") != std::string::npos) {
 			keepGoing = false;
+			sort(students.begin(), students.end(), compareStudentGradDates);
 		} else if (sInput.find("3") != std::string::npos) {
 			keepGoing = false;
+			sort(students.begin(), students.end(), compareStudentCreditHours);
 		} else {
 			std::cout << "Invalid input..." << std::endl;
 		} // end if
@@ -132,3 +138,15 @@ void sortStudents(std::vector<Student*>& students) {
 bool compareStudentNames(Student*& a, Student*& b) {
 	return (a->getLastFirst() < b->getLastFirst());
 } // end compareStudentNames
+
+bool compareStudentBirthdays(Student*& a, Student*& b) {
+	return (a->getBirthday()->compare(b->getBirthday()));
+} // end compareStudentBirthdays
+
+bool compareStudentGradDates(Student*& a, Student*& b) { 
+	return (a->getExpectedGradDate()->compare(b->getExpectedGradDate()));
+} // end compareStudentGradDates
+
+bool compareStudentCreditHours(Student*& a, Student*& b) {
+	return (a->getCreditHours() < b->getCreditHours());
+} // end compareStudentCreditHours

@@ -8,6 +8,10 @@ class Date {
 		int year;
 	public:
 		Date();
+		bool compare(Date* targetDate);
+		int getYear();
+		int getMonth();
+		int getDay();
 		void init(std::string date);
 		void printDate();
 };
