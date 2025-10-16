@@ -20,6 +20,9 @@ classDiagram
         - int year
 
         + Date()
+        + int getYear()
+        + int getMonth()
+        + int getDay()
         + void init(string date)
         + void printDate()
     }
@@ -34,6 +37,9 @@ classDiagram
 
         + Student()
         + ~Student()
+        + Date* getBirthday()
+        + Date* getexpectedGradDate()
+        + int getCreditHours()
         + void init(string studentString)
         + void printStudent()
         + string getLastFirst() 
@@ -121,4 +127,21 @@ Depending on what the user inputs, do one of the following:
         Call printStudents()  
     Find a student:  
         Call findStudent()  
-After the loop has ended, before the program ends, call deleteStudents() to deallocate heap memory, preventing memory leaks
+After the loop has ended, before the program ends, call deleteStudents() to deallocate heap memory, preventing memory leaks  
+
+## sortStudents Function
+This function asks the user what metric they want to sort the students by, then sorts them by said metric.  
+### Parameters for sortStudents()
+A reference to the student vector (must be a reference so it can actually change the values in students)  
+### Algorithm for sortStudents()
+Begin a loop for a menu, which will stop when the user chooses a metric to sort by  
+Print out the different valid inputs the user can do (these are in the form of numbers corresponding to different sorting metrics), but for this documentation i will be using the actual names for the metrics  
+Depending on what the user inputs, do one of the following:  
+    Names:  
+        Call the sort function, which will sort the students by name  
+    Birthday:  
+        Call the sort function, which will sort the students by birthday  
+    Graduation date:  
+        Call the sort function, which will sort the students by expected graduation date  
+    Credit hours:  
+        Call the sort function, which will sort the students by credit hours  
