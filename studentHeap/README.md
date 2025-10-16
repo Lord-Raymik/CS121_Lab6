@@ -104,3 +104,21 @@ A reference to the students vector (needs to be a reference so it can actually c
 ### Algorithm for deleteStudents()
 Loop through each Student pointer in the students vector, doing the following:  
     Delete the current student via it's pointer
+
+## menu Function
+This function is the menu that the user interacts with.  
+### Parameters for menu()
+A vector of Student pointers (likely the vector created from students.csv), which will be referred to as students.  
+### Algorithm for menu()
+Begin a loop for the menu, which will stop when the user decides to quit
+Print out the different valid inputs the user can do (these are in the form of numbers corresponding to commands, but for this documentation i will be using the actual names for the commands rather than the numbers)  
+Depending on what the user inputs, do one of the following:  
+    Quit:  
+        Tell the loop to stop, exiting the menu  
+    Print all student names:  
+        Call printStudentnames()  
+    Print all student data:  
+        Call printStudents()  
+    Find a student:  
+        Call findStudent()  
+After the loop has ended, before the program ends, call deleteStudents() to deallocate heap memory, preventing memory leaks
